@@ -1,0 +1,28 @@
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 28.125rem;
+    @include breakpoint-down(small){
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(2, 50vw);
+    }
+    &__1, &__2, &__3, &__4{
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &__1{
+        background-image: url(../../images/desktop/image-gallery-milkbottles.jpg);
+    }
+    &__2{
+        background-image: url(../../images/desktop/image-gallery-orange.jpg);
+    }
+    &__3{
+        background-image: url(../../images/desktop/image-gallery-cone.jpg);
+    }
+    &__4{
+        background-image: url(../../images/desktop/image-gallery-sugarcubes.jpg);
+    }
+}

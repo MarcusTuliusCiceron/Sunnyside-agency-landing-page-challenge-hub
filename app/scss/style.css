@@ -116,30 +116,13 @@
 }
 
 .header__hamburger {
-  height: 3px;
+  height: 25px;
   width: 25px;
-  background-color: white;
+  background-image: url(../../images/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   position: relative;
-}
-
-.header__hamburger::before {
-  content: "";
-  height: 3px;
-  width: 25px;
-  background-color: white;
-  position: absolute;
-  top: 8px;
-  left: 0;
-}
-
-.header__hamburger::after {
-  content: "";
-  height: 3px;
-  width: 25px;
-  background-color: white;
-  position: absolute;
-  top: 16px;
-  left: 0;
 }
 
 .header__menu {
@@ -150,7 +133,7 @@
   bottom: 5rem;
   background-color: white;
   color: black;
-  z-index: 1;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,6 +180,20 @@
 }
 
 .header__menu.active {
+  visibility: visible;
+}
+
+.overlay {
+  position: absolute;
+  width: 101vw;
+  height: 101vh;
+  left: 0;
+  top: 13vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  visibility: hidden;
+}
+
+.overlay.active {
   visibility: visible;
 }
 
@@ -262,7 +259,7 @@
 }
 
 .grid__cell a:hover::before {
-  scale: 1;
+  opacity: 1;
 }
 
 .grid__cell a::before {
@@ -275,9 +272,9 @@
   z-index: -1;
   background-color: #fad400;
   border-radius: 4px;
-  scale: 0;
-  -webkit-transition: scale 400ms ease-in-out;
-  transition: scale 400ms ease-in-out;
+  opacity: 0.4;
+  -webkit-transition: opacity 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
 }
 
 .grid__cell_A, .grid__cell_D {
@@ -291,6 +288,10 @@
   .grid__cell_A, .grid__cell_D {
     text-align: center;
   }
+}
+
+.grid__cell_D a::before {
+  background-color: #fe7867;
 }
 
 .grid__cell_B {
@@ -320,6 +321,218 @@
 .grid__cell_E, .grid__cell_F {
   padding: 0 10vw;
   padding-top: 25rem;
+}
+
+.testimonials {
+  padding: 5.625rem;
+}
+
+.testimonials h2 {
+  margin-top: 10rem;
+  text-align: center;
+  color: #a7abae;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 5rem;
+}
+
+.testimonials .clients {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 43.125em) {
+  .testimonials .clients {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.testimonials .clients .client {
+  padding: 1.875rem;
+}
+
+.testimonials .clients .client__portrait {
+  width: 4.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 4.375rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.testimonials .clients .client__portrait__1 {
+  background-image: url(../../images/image-emily.jpg);
+}
+
+.testimonials .clients .client__portrait__2 {
+  background-image: url(../../images/image-thomas.jpg);
+}
+
+.testimonials .clients .client__portrait__3 {
+  background-image: url(../../images/image-jennie.jpg);
+}
+
+.testimonials .clients .client__text {
+  font-family: 'Barlow', sans-serif;
+  color: #818498;
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 3.125rem;
+}
+
+.testimonials .clients .client__author {
+  text-align: center;
+  margin-bottom: .9375rem;
+}
+
+.testimonials .clients .client__job {
+  text-align: center;
+  font-family: 'Barlow', sans-serif;
+  color: #a7abae;
+  font-size: smaller;
+}
+
+.gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+  -ms-grid-rows: 28.125rem;
+      grid-template-rows: 28.125rem;
+}
+
+@media (max-width: 43.125em) {
+  .gallery {
+    -ms-grid-columns: (50%)[2];
+        grid-template-columns: repeat(2, 50%);
+    -ms-grid-rows: (50vw)[2];
+        grid-template-rows: repeat(2, 50vw);
+  }
+}
+
+.gallery__1, .gallery__2, .gallery__3, .gallery__4 {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery__1 {
+  background-image: url(../../images/desktop/image-gallery-milkbottles.jpg);
+}
+
+.gallery__2 {
+  background-image: url(../../images/desktop/image-gallery-orange.jpg);
+}
+
+.gallery__3 {
+  background-image: url(../../images/desktop/image-gallery-cone.jpg);
+}
+
+.gallery__4 {
+  background-image: url(../../images/desktop/image-gallery-sugarcubes.jpg);
+}
+
+.footer {
+  background-color: #458c7e;
+  height: 21.875rem;
+  padding-top: 4.6875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .logo {
+  width: 10.9375rem;
+  height: 2.1875rem;
+  background-image: url(../../images/logo_copy.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+}
+
+.footer .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.875rem;
+  margin-bottom: 5.625rem;
+}
+
+.footer a {
+  color: #25564b;
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer .icon {
+  width: 1.375rem;
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer .icon:hover {
+  cursor: pointer;
+}
+
+.footer .icon_1 {
+  background-image: url(../../images/icon-facebook.svg);
+}
+
+.footer .icon_1:hover {
+  background-image: url(../../images/icon-facebook_copy.svg);
+}
+
+.footer .icon_2 {
+  background-image: url(../../images/icon-instagram.svg);
+}
+
+.footer .icon_2:hover {
+  background-image: url(../../images/icon-instagram_copy.svg);
+}
+
+.footer .icon_3 {
+  background-image: url(../../images/icon-pinterest.svg);
+}
+
+.footer .icon_3:hover {
+  background-image: url(../../images/icon-pinterest_copy.svg);
+}
+
+.footer .icon_4 {
+  background-image: url(../../images/icon-twitter.svg);
+}
+
+.footer .icon_4:hover {
+  background-image: url(../../images/icon-twitter_copy.svg);
 }
 
 html {

@@ -55,7 +55,7 @@
             font-weight: bold;
             &:hover{
                 &::before{
-                    scale: 1;
+                    opacity: 1;
                 }
             }
             &::before{
@@ -68,8 +68,8 @@
                     z-index: -1;
                     background-color: $Yellow;
                     border-radius: 4px;
-                    scale: 0;
-                    transition: scale 400ms ease-in-out;
+                    opacity: 0.4;
+                    transition: opacity 400ms ease-in-out;
             }
             
         }
@@ -80,6 +80,11 @@
             text-align: left;
             @include breakpoint-down(small){
                 text-align: center;
+            }
+        }
+        &_D{
+            a::before{
+                background-color: $SoftRed;
             }
         }
         &_B{

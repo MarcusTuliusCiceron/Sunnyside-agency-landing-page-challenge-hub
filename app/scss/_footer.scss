@@ -1,0 +1,69 @@
+.footer{
+    background-color: $DarkModerateCyan;
+    height: 21.875rem;
+    padding-top: 4.6875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .logo{
+        width: 10.9375rem;
+        height: 2.1875rem;
+        background-image: url(../../images/logo_copy.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 40px;
+    }
+    .links{
+        display: flex;
+        gap: 1.875rem;
+        margin-bottom: 5.625rem;
+    }
+    a{
+        color: $DarkDesaturatedCyan;
+        text-decoration: none;
+        font-family: 'Barlow', sans-serif;
+        &:hover{
+            color: white;
+        }
+    }
+    .icons{
+        display: flex;
+        gap: 1.25rem;
+    }
+    .icon{
+        width: 1.375rem;
+        aspect-ratio: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;            
+        &:hover{
+            cursor: pointer;
+        }
+        &_1{
+            background-image: url(../../images/icon-facebook.svg);
+            &:hover{
+                background-image: url(../../images/icon-facebook_copy.svg);
+            }
+        }
+        &_2{
+            background-image: url(../../images/icon-instagram.svg);
+            &:hover{
+                background-image: url(../../images/icon-instagram_copy.svg);
+            }
+        }
+        &_3{
+            background-image: url(../../images/icon-pinterest.svg);
+            &:hover{
+                background-image: url(../../images/icon-pinterest_copy.svg);
+            }
+        }
+        &_4{
+            background-image: url(../../images/icon-twitter.svg);
+            &:hover{
+                background-image: url(../../images/icon-twitter_copy.svg);
+            }
+        }
+    }
+}
