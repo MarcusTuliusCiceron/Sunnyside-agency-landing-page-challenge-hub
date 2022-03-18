@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixin";
 @import "header";
+@import "grid";
 
 html{
     box-sizing: border-box;
@@ -12,7 +13,12 @@ html{
     padding: 0;
 }
 body{
-    height: 100vh;
+    height: 150vh;
     font-family: 'Barlow', sans-serif;
     font-family: 'Fraunces', serif;
+    overflow-x: hidden;
+}
+
+body.noscroll{
+    overflow: hidden;
 }

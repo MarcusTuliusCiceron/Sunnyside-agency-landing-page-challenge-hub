@@ -106,6 +106,15 @@
   color: white;
 }
 
+.header__clickzone {
+  height: 100%;
+  min-height: 26px;
+}
+
+.header__clickzone:hover {
+  cursor: pointer;
+}
+
 .header__hamburger {
   height: 3px;
   width: 25px;
@@ -129,7 +138,7 @@
   width: 25px;
   background-color: white;
   position: absolute;
-  top: -8px;
+  top: 16px;
   left: 0;
 }
 
@@ -142,6 +151,175 @@
   background-color: white;
   color: black;
   z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+}
+
+.header__menu a {
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2em;
+  color: #5a636c;
+}
+
+.header__menu button {
+  background-color: #fad400;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+}
+
+.header__menu button:hover {
+  opacity: 0.5;
+  color: black;
+  background-color: #fad400;
+}
+
+.header__menu::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  top: -15%;
+  left: 90%;
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, transparent), color-stop(50.5%, #FFF));
+  background: linear-gradient(to bottom right, transparent 50%, #FFF 50.5%);
+}
+
+.header__menu.active {
+  visibility: visible;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  max-width: 100vw;
+  -ms-grid-columns: (50vw)[2];
+      grid-template-columns: repeat(2, 50vw);
+  -ms-grid-rows: (minmax(37.5rem, auto))[3];
+      grid-template-rows: repeat(3, minmax(37.5rem, auto));
+      grid-template-areas: "A B" "C D" "E F";
+}
+
+@media (max-width: 43.125em) {
+  .grid {
+    -ms-grid-columns: (100vw)[1];
+        grid-template-columns: repeat(1, 100vw);
+    -ms-grid-rows: (minmax(19.6875rem, auto))[6];
+        grid-template-rows: repeat(6, minmax(19.6875rem, auto));
+        grid-template-areas: "A" "B" "C" "D" "E" "F";
+  }
+}
+
+.grid__cell {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 43.125em) {
+  .grid__cell {
+    padding-bottom: 30px;
+  }
+}
+
+.grid__cell h2 {
+  font-size: 2.4rem;
+  margin-bottom: 3.125rem;
+}
+
+.grid__cell h3 {
+  margin-bottom: 1.875rem;
+}
+
+.grid__cell p {
+  font-size: 1rem;
+  font-family: 'Barlow', sans-serif;
+  color: #5a636c;
+  margin-bottom: 3.125rem;
+  line-height: 1.7;
+}
+
+.grid__cell a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.grid__cell a:hover::before {
+  scale: 1;
+}
+
+.grid__cell a::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  left: -5%;
+  right: -5%;
+  bottom: 0px;
+  z-index: -1;
+  background-color: #fad400;
+  border-radius: 4px;
+  scale: 0;
+  -webkit-transition: scale 400ms ease-in-out;
+  transition: scale 400ms ease-in-out;
+}
+
+.grid__cell_A, .grid__cell_D {
+  padding-top: 10.3125vw;
+  padding-left: 12vw;
+  padding-right: 11vw;
+  text-align: left;
+}
+
+@media (max-width: 43.125em) {
+  .grid__cell_A, .grid__cell_D {
+    text-align: center;
+  }
+}
+
+.grid__cell_B {
+  background-image: url(../../images/desktop/image-transform.jpg);
+}
+
+@media (max-width: 43.125em) {
+  .grid__cell_B {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: A;
+  }
+}
+
+.grid__cell_C {
+  background-image: url(../../images/desktop/image-stand-out.jpg);
+}
+
+.grid__cell_E {
+  background-image: url(../../images/desktop/image-graphic-design.jpg);
+}
+
+.grid__cell_F {
+  background-image: url(../../images/desktop/image-photography.jpg);
+}
+
+.grid__cell_E, .grid__cell_F {
+  padding: 0 10vw;
+  padding-top: 25rem;
 }
 
 html {
@@ -158,8 +336,13 @@ html {
 }
 
 body {
-  height: 100vh;
+  height: 150vh;
   font-family: 'Barlow', sans-serif;
   font-family: 'Fraunces', serif;
+  overflow-x: hidden;
+}
+
+body.noscroll {
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */
